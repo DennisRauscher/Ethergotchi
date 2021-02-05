@@ -1,0 +1,8 @@
+node_modules
+
+!.gitignore
+!package-lock.json
+!bs-config.json
+!contracts/*
+!frontend/*
+!migrations/*

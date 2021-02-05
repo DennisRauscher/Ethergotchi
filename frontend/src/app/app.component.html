@@ -1,0 +1,37 @@
+<mat-card class="big-card">
+  <mat-card-header>
+    <mat-card-title>Ethergotchi von <b>{{currentAddressName}}</b></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Your account name..</mat-label>
+      <input #newName matInput>
+    </mat-form-field><button mat-button (click)="changeName(newName.value); newName.value=''">CHANGE</button>
+    <mat-form-field>
+      <mat-label>Your ethergotchi's name..</mat-label>
+      <input #gotchiName matInput>
+    </mat-form-field><button mat-button (click)="addGotchi(gotchiName.value); gotchiName.value=''">ADD</button>
+    <br />
+    <mat-card class="example-card" *ngFor="let gotchi of gotchis">
+      <mat-card-header>
+        <mat-card-title>{{gotchi.name}}</mat-card-title>
+        <mat-card-subtitle><b>Level: {{gotchi.level}} (0%)</b> | Hungry | {{getYearsOld(gotchi)}} old</mat-card-subtitle>
+      </mat-card-header>
+      <div class="avatar" [innerHTML]="getSVG(gotchi)"></div>
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+        <p>Last fed {{timeSinceString(this.toDateTime(gotchi.lastFeedTimestamp))}} ago.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="feed(gotchi.id)">FEED</button>
+        <button mat-button>DETAILS</button>
+        <button mat-button>GIVE AWAY</button>
+        <button mat-button color="warn" (click)="remove(gotchi.id)">remove</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
