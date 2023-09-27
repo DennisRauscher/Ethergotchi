@@ -1,7 +1,5 @@
 # Ethergotchi 🚀
 
-![Ethergotchi](https://link.to/your/ethergotchi/image.png)
-
 Welcome to the whimsical world of **Ethergotchi** – your personal companion on the Ethereum blockchain! 🌟
 
 Do you ever feel like your crypto wallet is a little lonely? Wish it had a digital buddy to keep you company on your decentralized adventures? Look no further! Ethergotchi is here to bring blockchain magic to life! 🚀🌙
